@@ -1,0 +1,12 @@
+services:
+  db:
+    container_name: db
+    image: postgres:16.1
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./pgdata/data:/var/lib/postgresql/data
+      - ./pgdata/backup:/var/lib/postgresql/backup
+      - ./pgdata/archive:/var/lib/postgresql/archive
